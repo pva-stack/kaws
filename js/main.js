@@ -46,7 +46,7 @@
   var barFill  = $('#loaderBar');
   var countEl  = $('#loaderCount');
   var statusEl = $('#loaderStatus');
-  var STATES = ['CALIBRATING ROOM 01', 'MOUNTING FIGURES', 'ADJUSTING GALLERY LIGHT', 'ARCHIVE READY'];
+  var STATES = ['CALIBRANDO SALA 01', 'MONTANDO FIGURAS', 'AJUSTANDO LUZ DA GALERIA', 'ARQUIVO PRONTO'];
 
   function bootExperience() {
     document.body.classList.remove('is-locked');
@@ -186,7 +186,7 @@
       document.body.classList.toggle('is-menu', open);
       document.body.classList.toggle('is-locked', open);
       burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      burger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
       $$('.menu__list a', menu).forEach(function (a, i) {
         a.style.transitionDelay = open ? (0.06 + i * 0.045) + 's' : '0s';
       });
@@ -359,8 +359,8 @@
         if (reason === 'unreadable') {
           var tag = $('.player__empty-tag', empty);
           var line = $('.player__empty-line', empty);
-          if (tag) tag.textContent = 'FILM SLOT · SOURCE UNREADABLE';
-          if (line) line.textContent = 'The browser could not decode the file at';
+          if (tag) tag.textContent = 'ESPAÇO DO FILME · FONTE ILEGÍVEL';
+          if (line) line.textContent = 'O navegador não conseguiu decodificar o arquivo em';
         }
         empty.removeAttribute('hidden');
       }
@@ -404,7 +404,7 @@
       video.currentTime = video.currentTime || 0;
       play();
       player.classList.add('is-playing');
-      if (soundBtn) { soundBtn.textContent = 'SOUND ON'; soundBtn.setAttribute('aria-pressed', 'true'); }
+      if (soundBtn) { soundBtn.textContent = 'SOM LIGADO'; soundBtn.setAttribute('aria-pressed', 'true'); }
     }
 
     if (playBtn) playBtn.addEventListener('click', startWithSound);
@@ -420,7 +420,7 @@
     if (soundBtn) soundBtn.addEventListener('click', function () {
       if (!hasSource) return;
       video.muted = !video.muted;
-      soundBtn.textContent = video.muted ? 'SOUND OFF' : 'SOUND ON';
+      soundBtn.textContent = video.muted ? 'SOM DESLIGADO' : 'SOM LIGADO';
       soundBtn.setAttribute('aria-pressed', String(!video.muted));
       if (!video.muted) { play(); player.classList.add('is-playing'); }
     });
@@ -430,7 +430,7 @@
       document.body.classList.toggle('is-cinema', on);
       if (cineBtn) {
         cineBtn.setAttribute('aria-pressed', String(on));
-        cineBtn.textContent = on ? 'EXIT CINEMA' : 'CINEMA MODE';
+        cineBtn.textContent = on ? 'SAIR DO CINEMA' : 'MODO CINEMA';
       }
       if (on) { player.classList.add('is-playing'); play(); }
     }
@@ -566,12 +566,12 @@
       input.classList.toggle('is-bad', !ok);
       if (!ok) {
         msg.style.color = 'var(--pink)';
-        msg.textContent = '↳ ENTER A VALID ADDRESS TO CONTINUE.';
+        msg.textContent = '↳ DIGITE UM ENDEREÇO VÁLIDO PARA CONTINUAR.';
         input.focus();
         return;
       }
       msg.style.color = 'var(--acid)';
-      msg.textContent = '↳ ADDED TO THE LIST — CONCEPTUAL DEMO, NOTHING WAS SENT.';
+      msg.textContent = '↳ ADICIONADO À LISTA — DEMONSTRAÇÃO CONCEITUAL, NADA FOI ENVIADO.';
       input.value = '';
       input.blur();
     });
