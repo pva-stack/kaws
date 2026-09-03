@@ -1,108 +1,117 @@
-# ARCHIVE ✕✕ — Companion Reimagined
+# ARCHIVE ✕✕ — Companion Reimaginado
 
-A conceptual **digital exhibition** built around the visual language of
-contemporary collectible sculpture and street culture: a dark gallery stage,
-two museum-white inversions, an editorial grid with technical labels, and a
-cinematic Higgsfield film at the centre of the journey.
+Uma **exposição digital conceitual** inspirada na linguagem visual da escultura
+colecionável contemporânea e da cultura de rua: uma cena de galeria em tons
+escuros, duas inversões em branco de museu, uma grade editorial com etiquetas
+técnicas e um filme cinematográfico em Higgsfield no centro da experiência.
 
-No frameworks, no build step, no dependencies. Open `index.html` and it runs.
+Sem frameworks, sem etapa de build e sem dependências. Abra o `index.html` e a
+página funciona.
 
 ---
 
-## Run it
+## Como executar
 
-Any static server works:
+Qualquer servidor estático serve:
 
 ```bash
 python -m http.server 5178
 ```
 
-Then open <http://localhost:5178>. (Opening the file directly with `file://`
-works too, but a server is better — it lets the `<video>` element stream.)
+Em seguida, abra <http://localhost:5178>. (Abrir o arquivo diretamente com
+`file://` também funciona, mas um servidor é melhor — ele permite que o
+elemento `<video>` seja transmitido corretamente.)
 
-## The film
+## O filme
 
-The film section is the centrepiece, and it is filled:
-`video/higgsfield-film.mp4` — 1280×720, 16:9, 8 s, looping. It plays muted when
-it scrolls into view, takes sound on click, and expands to cinema mode (Esc to
-leave). The poster is the film's own first frame, so the still and the video
-match and nothing jumps when playback starts.
+A seção do filme é o centro da experiência e está preenchida com:
+`video/higgsfield-film.mp4` — 1280×720, 16:9, 8 s, em loop. Ele reproduz em
+mudo ao entrar na tela, liga o som ao clicar e expande para o modo cinema
+(Esc para sair). O pôster é o próprio primeiro quadro do filme, então a imagem
+fixa e o vídeo coincidem e nada salta ao iniciar a reprodução.
 
-To swap the film, overwrite that file and save a fresh first frame over
-`assets/film-poster.jpg`. **`video/README.md` has the export settings and the
-Higgsfield prompts** written to match the section's art direction.
+Para trocar o filme, sobrescreva esse arquivo e salve um novo primeiro quadro em
+`assets/film-poster.jpg`. **O `video/README.md` contém as configurações de
+exportação e os prompts do Higgsfield** ajustados à direção artística da seção.
 
-If the file is ever missing or unreadable, the player says so in place and tells
-you where to put it — the page never shows a broken frame.
+Se o arquivo estiver ausente ou ilegível, o player informa isso no próprio local
+e orienta onde colocar o arquivo — a página nunca mostra uma imagem quebrada.
 
-## Structure
+## Estrutura
 
 ```
-index.html                 one page, 13 sections, semantic + labelled
-css/style.css              design system → components → motion → responsive
-js/main.js                 vanilla, ~15 self-contained modules
-assets/                    the production image library (built, do not hand-edit)
-images/                    the original reference screenshots (source of truth)
-tools/build_assets.py      regenerates assets/ from images/
-video/                     the Higgsfield slot + its brief
+index.html                 uma página, 13 seções, semântica + etiquetas
+css/style.css              sistema de design → componentes → movimento → responsividade
+js/main.js                 vanilla, ~15 módulos independentes
+assets/                    biblioteca final de imagens (gerada, não editar manualmente)
+images/                    capturas originais de referência (fonte de verdade)
+tools/build_assets.py      regenera assets/ a partir de images/
+video/                     o slot do Higgsfield + sua brief
 ```
 
-### The journey
+### A jornada
 
-| | Section | Ground | Accent |
+| | Seção | Base | Destaque |
 |---|---|---|---|
-| 01 | Hero — installation view | black | acid |
-| 02 | Manifesto | **paper** | pink |
-| 03 | Featured figures — rotation study + black edition | black | acid |
-| 04 | Anatomy — sticky specimen with hotspots | black | cyan |
-| 05 | **The film — Higgsfield** | near-black | acid |
-| 06 | Exhibition — gallery room | **paper** | pink |
-| 07 | Evolution of form — blueprint | deep navy | cyan |
-| 08 | Street — from wall to object | black | pink |
-| 09 | Limited drops | black | acid / pink |
-| 10 | Apparel | black | acid |
-| 11 | Archive — horizontal index | black | — |
-| 12 | Access | black | acid |
+| 01 | Hero — vista da instalação | preto | ácido |
+| 02 | Manifesto | **papel** | rosa |
+| 03 | Figuras em destaque — estudo de rotação + edição preta | preto | ácido |
+| 04 | Anatomia — exemplar fixo com hotspots | preto | ciano |
+| 05 | **O filme — Higgsfield** | quase preto | ácido |
+| 06 | Exposição — sala de galeria | **papel** | rosa |
+| 07 | Evolução da forma — blueprint | azul-marinho profundo | ciano |
+| 08 | Rua — do muro ao objeto | preto | rosa |
+| 09 | Lançamentos limitados | preto | ácido / rosa |
+| 10 | Vestuário | preto | ácido |
+| 11 | Arquivo — índice horizontal | preto | — |
+| 12 | Acesso | preto | ácido |
 
-One accent per section, never all at once. The two paper sections are the
-rhythm: they stop the dark from becoming wallpaper.
+Uma cor de destaque por seção, nunca todas de uma vez. As duas seções em papel
+são o ritmo: elas evitam que o fundo escuro vire um simples papel de parede.
 
 ## Assets
 
-The reference screenshots in `images/` carry burnt-in mock typography, so they
-are not used directly. `tools/build_assets.py` turns them into a clean library:
+As capturas de referência em `images/` possuem tipografia mockada gravada no
+arquivo, então não são usadas diretamente. O `tools/build_assets.py` transforma
+essas imagens em uma biblioteca limpa:
 
-- **figures are knocked out** of their white studio backdrop — a border flood
-  fill, a strict second sweep for sealed pockets (the slot between the legs is
-  closed off where the boots meet), a rim sweep, and a matte un-multiply so a
-  black figure keeps no white outline on a black stage;
-- **photographic plates are cropped clear** of any burnt-in text, then upscaled
-  with LANCZOS + unsharp so they hold at 1440/1920;
-- a **film poster** and a tiling **grain** plate are generated.
+- **as figuras são recortadas** do fundo branco do estúdio — preenchimento
+  de borda, segunda varredura rígida para bolsos selados (o espaço entre as
+  pernas é fechado onde as botas se encontram), varredura de contorno e
+  desmultiplicação mate para que uma figura preta não mantenha contorno branco
+  em um palco preto;
+- **as placas fotográficas são recortadas** para remover qualquer texto
+  gravado e depois ampliadas com LANCZOS + unsharp para manter qualidade em
+  1440/1920;
+- um **pôster de filme** e uma placa de **grain** em mosaico são gerados.
 
 ```bash
-python tools/build_assets.py      # needs Pillow
+python tools/build_assets.py      # requer Pillow
 ```
 
-Everything in `assets/` is generated. Edit the script, not the output.
+Tudo em `assets/` é gerado. Edite o script, não a saída.
 
-## Notes on the build
+## Observações sobre a construção
 
-- **Type** — Archivo (display, variable width), Inter (UI), JetBrains Mono
-  (technical labels), from Google Fonts with real fallback stacks.
-- **Motion** — one easing curve (`cubic-bezier(.16,1,.3,1)`), transform and
-  opacity only, IntersectionObserver for every reveal, one rAF-throttled
-  scroll bus rather than competing listeners.
-- **`prefers-reduced-motion`** — parallax, the marquee, the custom cursor, the
-  grain drift and every reveal transition drop out; the page stays complete.
-- **Accessibility** — skip link, focus-visible rings, aria labels on the nav,
-  menu and player, alt text on every image, keyboard-reachable archive rail.
-- **Performance** — no libraries, lazy loading below the fold, `width`/`height`
-  on images to hold layout, the marquee pauses off-screen and the cursor loop
-  parks itself when idle.
+- **Tipografia** — Archivo (display, largura variável), Inter (UI), JetBrains
+  Mono (etiquetas técnicas), carregadas do Google Fonts com stacks reais de
+  fallback.
+- **Movimento** — uma única curva de easing (`cubic-bezier(.16,1,.3,1)`),
+  transform e opacidade apenas, IntersectionObserver para cada revelação e um
+  bus de rolagem com rAF em vez de listeners concorrentes.
+- **`prefers-reduced-motion`** — paralaxe, marquee, cursor customizado, deriva
+  do grain e todas as transições de revelação são removidas; a página continua
+  completa.
+- **Acessibilidade** — skip link, anéis de foco visível, labels aria na navegação,
+  menu e player, texto alternativo em todas as imagens e trilha do arquivo
+  acessível por teclado.
+- **Desempenho** — sem bibliotecas, carregamento lento abaixo da dobra,
+  `width`/`height` nas imagens para manter o layout, marquee pausada fora da
+  tela e o cursor estaciona quando está ocioso.
 
-## Legal
+## Aviso legal
 
-Independent, non-commercial concept piece inspired by the visual language of
-KAWS. Not an official site, and not affiliated with or endorsed by the artist
-or any rights holder. Reference imagery is used for study purposes only.
+Peça conceitual independente e não comercial inspirada na linguagem visual do
+KAWS. Não é um site oficial e não é afiliado nem endossado pelo artista ou por
+nenhum detentor de direitos. As imagens de referência são usadas apenas para
+estudo.

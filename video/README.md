@@ -1,78 +1,83 @@
-# THE FILM — Higgsfield slot
+# O FILME — slot do Higgsfield
 
-The film section (`#film` in `index.html`) is the centrepiece of the experience.
+A seção do filme (`#film` no `index.html`) é o centro da experiência.
 
-**Status: filled.** `higgsfield-film.mp4` is in place — 1280×720, 16:9, 8 s,
-looping. The poster (`assets/film-poster.jpg`) is that film's own first frame,
-so the still and the video match and the player does not jump when it starts.
+**Status: preenchido.** O arquivo `higgsfield-film.mp4` já está no lugar —
+1280×720, 16:9, 8 s, em loop. O pôster (`assets/film-poster.jpg`) é o
+próprio primeiro quadro do filme, então a imagem fixa e o vídeo coincidem e o
+player não salta ao iniciar.
 
 ---
 
-## 1 · Replacing the film
+## 1 · Substituindo o filme
 
-Overwrite this file:
+Sobrescreva este arquivo:
 
 ```
-video/higgsfield-film.mp4      ← the film (H.264 / AAC)
+video/higgsfield-film.mp4      ← o filme (H.264 / AAC)
 ```
 
-Then regenerate the poster so it matches the new first frame, otherwise the
-player will flash the old still before playing. Any frame grab works — export a
-still at 0 s from the editor and save it over `assets/film-poster.jpg` at
-1280×720.
+Em seguida, gere novamente o pôster para que ele corresponda ao novo primeiro
+quadro; caso contrário, o player exibirá o pôster antigo antes da reprodução.
+Qualquer captura de frame funciona — exporte um still em 0 s no editor e salve
+em `assets/film-poster.jpg` em 1280×720.
 
-To also serve a lighter WebM, list it **before** the MP4 in `index.html`:
+Para também servir um WebM mais leve, liste-o **antes** do MP4 no
+`index.html`:
 
 ```html
 <source src="video/higgsfield-film.webm" type="video/webm">
 <source src="video/higgsfield-film.mp4" type="video/mp4">
 ```
 
-`tools/build_assets.py` will not overwrite `film-poster.jpg` once it exists.
+O `tools/build_assets.py` não sobrescreve o `film-poster.jpg` uma vez que ele
+existe.
 
-## 2 · Export settings
+## 2 · Configurações de exportação
 
 | | |
 |---|---|
-| Aspect | 16:9 |
-| Resolution | 1920×1080 (1280×720 is fine) |
-| Frame rate | 24 fps — the cinematic read |
-| Codec | H.264, MP4 container |
-| Length | 12–25 s, looping cleanly (it loops on the page) |
-| Bitrate | 6–10 Mbps, then compress to ≈ 8–15 MB |
-| Audio | Optional. It starts muted; sound only plays when the visitor asks |
+| Proporção | 16:9 |
+| Resolução | 1920×1080 (1280×720 também serve) |
+| Taxa de quadros | 24 fps — a leitura cinematográfica |
+| Codec | H.264, contêiner MP4 |
+| Duração | 12–25 s, com loop limpo (ele faz loop na página) |
+| Bitrate | 6–10 Mbps, depois comprimir para ≈ 8–15 MB |
+| Áudio | Opcional. Começa em mudo; o som só toca quando o visitante pede |
 
-Keep the first and last frames close to each other — the player loops.
+Mantenha o primeiro e o último quadro próximos entre si — o player faz loop.
 
-## 3 · Generation brief
+## 3 · Brief de geração
 
-Direction the section is written around — slow, gallery-lit, material, premium.
-Paste any of these into Higgsfield:
+A direção da seção é escrita para ser lenta, iluminada como galeria, material e
+premium. Cole qualquer um desses prompts no Higgsfield:
 
-**A — the orbit (recommended for the main slot)**
+**A — a órbita (recomendado para o slot principal)**
 
-> Slow cinematic orbit around a matte grey vinyl collectible sculpture of a
-> cartoon-like figure with crossed X eyes, standing on a black plinth in a dark
-> museum room. Single soft key light from above, deep falloff into black,
-> gentle specular highlights travelling across the moulded surface. Shallow
-> depth of field, anamorphic feel, 24 fps, no camera shake, no text.
+> Órbita cinematográfica lenta ao redor de uma escultura colecionável em vinil,
+> de tom cinza mate, com figura cartoon-like e olhos em X cruzados, em pé sobre
+> um pedestal preto em uma sala de museu escura. Luz principal suave vinda de
+> cima, queda profunda em direção ao preto, destaques especulares suaves
+> percorrendo a superfície moldada. Profundidade de campo rasa, sensação
+> anamórfica, 24 fps, sem tremor de câmera, sem texto.
 
-**B — the surface study**
+**B — o estudo da superfície**
 
-> Extreme close-up macro drift across the surface of a cast vinyl figure: seam
-> lines, matte-to-gloss transition, moulding marks, the edge of a painted X.
-> Slow push-in, cool grey palette with one warm highlight, dust in the air,
-> gallery lighting, cinematic, 24 fps.
+> Deriva macro de close-up extremo sobre a superfície de uma figura em vinil
+> fundido: linhas de costura, transição matte-to-gloss, marcas de moldagem, a
+> borda de um X pintado. Empurrão lento para dentro, paleta de cinza frio com
+> um destaque quente, poeira no ar, iluminação de galeria, cinematográfico,
+> 24 fps.
 
-**C — the transition essay**
+**C — o ensaio de transição**
 
-> A dark gallery: a sculptural figure lit from above. Camera pushes forward and
-> the environment dissolves from white museum room to a graffiti-covered wall,
-> then to a vitrine holding a half-dissected version of the same figure.
-> Moody, premium, high contrast, slow motion, no text, no logos.
+> Uma galeria escura: uma figura escultórica iluminada de cima. A câmera avança
+> e o ambiente dissolve de uma sala de museu branca para uma parede coberta por
+> grafite, depois para uma vitrine com uma versão meio dissecada da mesma
+> figura. Místico, premium, alto contraste, câmera lenta, sem texto, sem logos.
 
-## 4 · Where it appears in the code
+## 4 · Onde aparece no código
 
-- Section markup: `index.html` → search for `HIGGSFIELD FILM GOES HERE`
-- Styling: `css/style.css` → section `10 · FILM`
-- Behaviour: `js/main.js` → section `09 · FILM PLAYER`
+- Estrutura da seção: `index.html` → procurar por `HIGGSFIELD FILM GOES HERE`
+- Estilo: `css/style.css` → seção `10 · FILM`
+- Comportamento: `js/main.js` → seção `09 · FILM PLAYER`
