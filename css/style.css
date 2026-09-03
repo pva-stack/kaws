@@ -277,6 +277,11 @@ input {
   line-height: 1.65;
 }
 
+.head--center .head__lead {
+  margin-inline: auto;
+  max-width: 48ch;
+}
+
 .dot {
   font-style: normal;
   color: var(--acid);
@@ -1878,7 +1883,9 @@ body.is-cinema::before {
   color: var(--cyan);
 }
 
-.form .head__lead {
+.form .head--center .head__lead {
+  margin-inline: auto;
+  max-width: 48ch;
   color: #9FB6C4;
 }
 
