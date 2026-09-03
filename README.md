@@ -1,4 +1,4 @@
-# KAWS Archive
+# KAWS
 
 Projeto desenvolvido como uma experiência visual inspirada no universo artístico de **KAWS**, misturando arte, design, animações e elementos interativos.
 
