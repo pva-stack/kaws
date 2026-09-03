@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARCHIVE ✕✕ — Companion Reimagined / A Digital Exhibition</title>
+<meta name="description" content="A conceptual digital exhibition inspired by the visual language of KAWS: sculpture, street culture, collectible design and cinematic storytelling.">
+<meta name="theme-color" content="#050505">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ARCHIVE ✕✕ — Companion Reimagined">
+<meta property="og:description" content="Where sculpture meets street culture. A curatorial study of form, repetition and emotional presence.">
+<meta property="og:image" content="assets/scene-street.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62.5..125,100..900&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preload" as="image" href="assets/scene-street.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050505'/%3E%3Cg stroke='%23E6FF2E' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M5 11l7 7M12 11l-7 7M20 11l7 7M27 11l-7 7'/%3E%3C/g%3E%3C/svg%3E">
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════════════ 00 · LOADER ═══ -->
+<div class="loader" id="loader" role="status" aria-live="polite" aria-label="Loading the exhibition">
+  <div class="loader__scan" aria-hidden="true"></div>
+  <div class="loader__inner">
+    <p class="loader__kicker mono">ARCHIVE <span class="xx">✕✕</span> &nbsp;/&nbsp; DIGITAL EXHIBITION</p>
+    <p class="loader__title">COMPANION<br><em>REIMAGINED</em></p>
+    <div class="loader__foot">
+      <p class="mono loader__status" id="loaderStatus">CALIBRATING ROOM 01</p>
+      <p class="mono loader__count"><span id="loaderCount">00</span><span class="dim">/100</span></p>
+    </div>
+    <div class="loader__bar"><span id="loaderBar"></span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ CUSTOM CURSOR ═════ -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__ring"></span>
+  <span class="cursor__label" id="cursorLabel"></span>
+</div>
+
+<!-- global film grain -->
+<div class="grain" aria-hidden="true"></div>
+
+<a class="skip" href="#hero">Skip to content</a>
+
+<!-- ═══════════════════════════════════════════════════ NAVIGATION ═══════ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="#hero" aria-label="Archive XX — home">
+      <span class="nav__logo-mark" aria-hidden="true">✕✕</span>
+      <span class="nav__logo-type">ARCHIVE</span>
+      <span class="nav__logo-sub mono">/ SS—25</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#figures" data-nav>FIGURES</a>
+      <a href="#anatomy" data-nav>ANATOMY</a>
+      <a href="#film" data-nav>FILM</a>
+      <a href="#exhibition" data-nav>EXHIBITION</a>
+      <a href="#form" data-nav>FORM</a>
+      <a href="#drops" data-nav>DROPS</a>
+      <a href="#apparel" data-nav>APPAREL</a>
+    </nav>
+
+    <div class="nav__aside">
+      <span class="mono nav__clock" id="navClock">TOKYO —:—</span>
+      <a class="nav__cta" href="#access">REQUEST ACCESS</a>
+      <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav__progress" aria-hidden="true"><span id="navProgress"></span></div>
+</header>
+
+<!-- ══════════════════════════════════════════════════ MOBILE MENU ═══════ -->
+<div class="menu" id="menu" hidden>
+  <nav class="menu__list" aria-label="Mobile">
+    <a href="#hero"><span class="mono">01</span> HOME</a>
+    <a href="#figures"><span class="mono">02</span> FIGURES</a>
+    <a href="#anatomy"><span class="mono">03</span> ANATOMY</a>
+    <a href="#film"><span class="mono">04</span> THE FILM</a>
+    <a href="#exhibition"><span class="mono">05</span> EXHIBITION</a>
+    <a href="#form"><span class="mono">06</span> FORM</a>
+    <a href="#street"><span class="mono">07</span> STREET</a>
+    <a href="#drops"><span class="mono">08</span> DROPS</a>
+    <a href="#apparel"><span class="mono">09</span> APPAREL</a>
+    <a href="#access"><span class="mono">10</span> ACCESS</a>
+  </nav>
+  <p class="menu__foot mono">CONCEPTUAL EXHIBITION · NOT AN OFFICIAL KAWS RELEASE</p>
+</div>
+
+<main id="main">
+
+<!-- ══════════════════════════════════════════════════════ 01 · HERO ═════ -->
+<section class="hero" id="hero">
+  <div class="hero__text">
+    <div class="hero__eyebrow" data-reveal>
+      <span class="tag tag--acid">DIGITAL EXHIBITION</span>
+      <span class="mono">DROP CODE: SS—2025 &nbsp;//&nbsp; ROOM 01 &nbsp;//&nbsp; TOKYO</span>
+    </div>
+
+    <h1 class="hero__title" data-split>
+      <span class="line">COMPANION</span>
+      <span class="line">REIMAGINED<i class="dot">.</i></span>
+    </h1>
+
+    <p class="hero__lead" data-reveal>
+      A curatorial study of form, repetition and emotional presence — cast vinyl,
+      open-edition sculpture and street-culture artifacts, held in a single archive.
+    </p>
+
+    <div class="hero__actions" data-reveal>
+      <a class="btn btn--solid" href="#figures">ENTER THE EXHIBITION <i aria-hidden="true">→</i></a>
+      <a class="btn btn--ghost" href="#film" data-cursor="PLAY">WATCH THE FILM <i aria-hidden="true">→</i></a>
+    </div>
+
+    <dl class="hero__meta" data-reveal>
+      <div><dt class="mono">EDITION</dt><dd>001 — 500</dd></div>
+      <div><dt class="mono">MEDIUM</dt><dd>CAST VINYL</dd></div>
+      <div><dt class="mono">SCALE</dt><dd>11 IN / 27.9 CM</dd></div>
+      <div><dt class="mono">STATUS</dt><dd class="acid">ARCHIVE VIEW</dd></div>
+    </dl>
+  </div>
+
+  <figure class="hero__plate">
+    <img src="assets/scene-street.jpg" alt="Companion sculptures on black plinths in front of a full-wall graffiti mural." fetchpriority="high" decoding="async" width="1024" height="1330">
+    <figcaption class="mono">
+      <span class="acid">■</span> INSTALLATION VIEW — MURAL ROOM
+      <span class="dim">/ 04 FIGURES / OPEN EDITION</span>
+    </figcaption>
+  </figure>
+
+  <a class="hero__scroll mono" href="#manifesto" aria-label="Scroll to the manifesto">
+    <span>SCROLL</span><i aria-hidden="true"></i>
+  </a>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════ TICKER ═══════ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track" id="ticker">
+    <span class="ticker__seq">MONOCHROME <i>✕</i> DISSECTED <i>✕</i> BLACK EDITION <i>✕</i> ANATOMY <i>✕</i> ARCHIVE ONLY <i>✕</i> STREET CULTURE <i>✕</i> SCULPTURAL PRESENCE <i>✕</i> LIMITED VIEW <i>✕</i> </span>
+  </div>
+</div>
+
+<!-- ═════════════════════════════════════════════════ 02 · MANIFESTO ═════ -->
+<section class="section manifesto invert" id="manifesto">
+  <div class="wrap manifesto__grid">
+    <p class="index mono" data-reveal>02 <span>—</span> MANIFESTO</p>
+
+    <h2 class="manifesto__statement" data-split>
+      <span class="line">Where sculpture meets</span>
+      <span class="line">street culture. Where the</span>
+      <span class="line">collectible object becomes</span>
+      <span class="line">an <em>emotional monument</em>.</span>
+    </h2>
+
+    <div class="manifesto__notes">
+      <div data-reveal>
+        <p class="mono">FORM</p>
+        <p>Repetition as a language. One silhouette, restated until it stops being a toy and starts being a monument.</p>
+      </div>
+      <div data-reveal>
+        <p class="mono">MATERIAL</p>
+        <p>Cast vinyl, matte and gloss, seams left visible. Industrial process treated as sculptural craft.</p>
+      </div>
+      <div data-reveal>
+        <p class="mono">INTENT</p>
+        <p>Not a store. An archive — where each object is documented, measured and given room to be looked at.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ 03 · FIGURES ═════ -->
+<section class="section figures" id="figures">
+  <div class="wrap">
+    <header class="head">
+      <p class="index mono" data-reveal>03 <span>—</span> FEATURED FIGURES</p>
+      <h2 class="head__title" data-split>
+        <span class="line">FOUR VIEWS.</span>
+        <span class="line">ONE SILHOUETTE.</span>
+      </h2>
+      <p class="head__lead" data-reveal>
+        The archive opens with a full rotation study. Every figure is photographed
+        under the same light, at the same distance, so the differences between
+        editions become the subject.
+      </p>
+    </header>
+
+    <!-- museum plate — white inversion inside the dark stage -->
+    <figure class="plate" data-reveal>
+      <div class="plate__img">
+        <img src="assets/sheet-mono.jpg" alt="Four views of a grey monochrome Companion figure: front, half-dissected, profile and back." loading="lazy" decoding="async" width="1354" height="747">
+      </div>
+      <figcaption class="plate__cap">
+        <span class="mono">STUDY 01 / MONOCHROME — FOUR VIEWS</span>
+        <span class="mono dim">GREYSCALE CAST VINYL · 11 IN · OPEN EDITION</span>
+      </figcaption>
+    </figure>
+
+    <!-- black edition specimens -->
+    <div class="specimens">
+      <article class="spec" data-reveal data-cursor="VIEW">
+        <p class="spec__no mono">01</p>
+        <div class="spec__stage"><img src="assets/cut-black-front.png" alt="Black Companion figure, front view." loading="lazy" decoding="async" width="196" height="454"></div>
+        <div class="spec__body">
+          <h3>MONOCHROME<span class="sep">//</span>BLACK</h3>
+          <p class="mono dim">MATTE SHELL · FRONT ELEVATION</p>
+        </div>
+      </article>
+
+      <article class="spec spec--accent" data-reveal data-cursor="VIEW">
+        <p class="spec__no mono">02</p>
+        <div class="spec__stage"><img src="assets/cut-black-dissect.png" alt="Black Companion figure cut open on one side to reveal brightly coloured internal organs." loading="lazy" decoding="async" width="197" height="455"></div>
+        <div class="spec__body">
+          <h3>DISSECTED<span class="sep">//</span>OPEN</h3>
+          <p class="mono dim">HALF SECTION · INNER COLOUR</p>
+        </div>
+      </article>
+
+      <article class="spec" data-reveal data-cursor="VIEW">
+        <p class="spec__no mono">03</p>
+        <div class="spec__stage"><img src="assets/cut-black-side.png" alt="Black Companion figure, side profile." loading="lazy" decoding="async" width="117" height="453"></div>
+        <div class="spec__body">
+          <h3>PROFILE<span class="sep">//</span>SIDE</h3>
+          <p class="mono dim">SILHOUETTE STUDY · 90°</p>
+        </div>
+      </article>
+
+      <article class="spec" data-reveal data-cursor="VIEW">
+        <p class="spec__no mono">04</p>
+        <div class="spec__stage"><img src="assets/cut-black-back.png" alt="Black Companion figure seen from behind." loading="lazy" decoding="async" width="197" height="451"></div>
+        <div class="spec__body">
+          <h3>REVERSE<span class="sep">//</span>BACK</h3>
+          <p class="mono dim">SEAM LINE · MOULD RECORD</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ 04 · ANATOMY ═════ -->
+<section class="section anatomy" id="anatomy">
+  <div class="wrap anatomy__grid">
+
+    <div class="anatomy__viewer">
+      <div class="anatomy__sticky">
+        <div class="anatomy__stage">
+          <img src="assets/cut-mono-dissect.png" alt="Grey Companion figure with one half cut away, exposing skull, brain and internal organs." loading="lazy" decoding="async" width="195" height="438">
+          <span class="hot" style="--x:19%; --y:38%" data-hot="0" aria-hidden="true"><i></i></span>
+          <span class="hot" style="--x:62%; --y:41%" data-hot="1" aria-hidden="true"><i></i></span>
+          <span class="hot" style="--x:30%; --y:15%" data-hot="2" aria-hidden="true"><i></i></span>
+          <span class="hot" style="--x:42%; --y:89%" data-hot="3" aria-hidden="true"><i></i></span>
+        </div>
+        <p class="anatomy__readout mono">
+          SPECIMEN <span class="acid">KA—889</span> / HALF SECTION
+          <span class="dim">· SCAN <span id="scanPct">00</span>%</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="anatomy__content">
+      <header class="head head--tight">
+        <p class="index mono" data-reveal>04 <span>—</span> ANATOMY</p>
+        <h2 class="head__title" data-split>
+          <span class="line">INSIDE</span>
+          <span class="line">THE ICON<i class="dot dot--cyan">.</i></span>
+        </h2>
+        <p class="head__lead" data-reveal>
+          One half stays sealed. The other is opened like a specimen. The figure is
+          read twice — as a character, and as a manufactured object with a section
+          drawing.
+        </p>
+      </header>
+
+      <ol class="anatomy__steps">
+        <li class="astep" data-step="0">
+          <p class="astep__no mono">01</p>
+          <h3>EXTERNAL SHELL</h3>
+          <p>Matte cast vinyl, 2.4 mm wall. The surface is deliberately quiet so the silhouette does the talking.</p>
+        </li>
+        <li class="astep" data-step="1">
+          <p class="astep__no mono">02</p>
+          <h3>INNER STRUCTURE</h3>
+          <p>A full anatomical cast — ribcage, viscera, musculature — moulded at collector scale and painted by hand.</p>
+        </li>
+        <li class="astep" data-step="2">
+          <p class="astep__no mono">03</p>
+          <h3>SIGNATURE ✕✕ EYES</h3>
+          <p>The mark that made the figure legible worldwide. Two crossed strokes doing the work of an entire face.</p>
+        </li>
+        <li class="astep" data-step="3">
+          <p class="astep__no mono">04</p>
+          <h3>SCULPTURAL MASS</h3>
+          <p>Weight sits low, in the boots. The stance reads as heavy, still and slightly resigned.</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ 05 · THE FILM ════ -->
+<!--
+  ╔══════════════════════════════════════════════════════════════════════╗
+  ║  HIGGSFIELD FILM — CENTREPIECE OF THE EXPERIENCE                     ║
+  ║                                                                      ║
+  ║  1. Export the film from Higgsfield (16:9, H.264/MP4).               ║
+  ║  2. Save it as:            video/higgsfield-film.mp4                 ║
+  ║     (optional WebM at:     video/higgsfield-film.webm)               ║
+  ║  3. The poster frame is assets/film-poster.jpg. Export a still from  ║
+  ║     the film and overwrite that file to swap it — no markup change.  ║
+  ║                                                                      ║
+  ║  No other change is needed — the player, ambient autoplay, sound     ║
+  ║  toggle, scrub bar, cinema mode and the missing-file fallback are    ║
+  ║  already wired in js/main.js.  Brief + prompt: video/README.md       ║
+  ╚══════════════════════════════════════════════════════════════════════╝
+-->
+<section class="film" id="film">
+  <div class="film__bg" aria-hidden="true"></div>
+
+  <div class="wrap film__head">
+    <p class="index mono" data-reveal>05 <span>—</span> HIGGSFIELD VISUAL ESSAY</p>
+    <h2 class="film__title" data-split>
+      <span class="line">MOTION</span>
+      <span class="line">STUDY<i class="dot">.</i></span>
+    </h2>
+    <p class="film__lead" data-reveal>
+      The archive is not only still. A cinematic interpretation generated with
+      <strong>Higgsfield</strong> moves through the object — gallery light, slow
+      orbit, surface, seam and gloss — until the figure stops reading as a product
+      and starts reading as presence.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <div class="player" id="player" data-cursor="PLAY">
+      <video
+        id="filmVideo"
+        class="player__video"
+        poster="assets/film-poster.jpg"
+        preload="metadata"
+        muted
+        loop
+        playsinline
+        webkit-playsinline
+        aria-label="Higgsfield cinematic study of the Companion figure">
+        <!-- ▼▼▼  HIGGSFIELD FILM  ▼▼▼
+             To add a lighter WebM alongside it, list it FIRST:
+             <source src="video/higgsfield-film.webm" type="video/webm">  -->
+        <source src="video/higgsfield-film.mp4" type="video/mp4">
+        <!-- ▲▲▲  HIGGSFIELD FILM  ▲▲▲ -->
+      </video>
+
+      <div class="player__veil" aria-hidden="true"></div>
+
+      <!-- shown only while the film file is absent -->
+      <div class="player__empty" id="playerEmpty" hidden>
+        <p class="mono player__empty-tag">FILM SLOT · AWAITING SOURCE</p>
+        <p class="player__empty-line">Drop the Higgsfield export at</p>
+        <p><code>video/higgsfield-film.mp4</code></p>
+        <p class="mono dim">EXPORT BRIEF &amp; PROMPTS — video/README.md</p>
+      </div>
+
+      <button class="player__play" id="playBtn" type="button" aria-label="Play the film with sound">
+        <span class="player__play-ring" aria-hidden="true"></span>
+        <span class="player__play-icon" aria-hidden="true"></span>
+        <span class="player__play-text mono">WATCH<br>THE FILM</span>
+      </button>
+
+      <div class="player__hud" aria-hidden="true">
+        <span class="mono">HIGGSFIELD // CINEMATIC STUDY</span>
+        <span class="mono player__rec">REC <i></i></span>
+      </div>
+
+      <div class="player__bar" id="playerBar"><span id="playerFill"></span></div>
+
+      <div class="player__ctrl">
+        <button type="button" id="soundBtn" class="mono" aria-pressed="false">SOUND OFF</button>
+        <button type="button" id="cinemaBtn" class="mono" aria-pressed="false">CINEMA MODE</button>
+      </div>
+    </div>
+
+    <dl class="film__meta">
+      <div data-reveal><dt class="mono">TOOL</dt><dd>HIGGSFIELD</dd></div>
+      <div data-reveal><dt class="mono">FORMAT</dt><dd>16:9 / 24 FPS</dd></div>
+      <div data-reveal><dt class="mono">DIRECTION</dt><dd>SLOW ORBIT · GALLERY LIGHT</dd></div>
+      <div data-reveal><dt class="mono">CHAPTER</dt><dd>01 — THE OBJECT MOVES</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ 06 · EXHIBITION ═════ -->
+<section class="section exhibition invert" id="exhibition">
+  <div class="wrap">
+    <header class="head head--split">
+      <div>
+        <p class="index mono" data-reveal>06 <span>—</span> EXHIBITION MODE</p>
+        <h2 class="head__title" data-split>
+          <span class="line">OBJECTS</span>
+          <span class="line">IN SPACE<i class="dot dot--pink">.</i></span>
+        </h2>
+      </div>
+      <p class="head__lead" data-reveal>
+        Removed from the plinth of commerce and placed in a room with nothing else
+        in it. Scale, distance and silence do the curating.
+      </p>
+    </header>
+
+    <figure class="exhibit" data-reveal data-cursor="ROOM 02">
+      <img src="assets/gallery-room.jpg" alt="White gallery room with a large white Companion sculpture in front of a colourful painting, flanked by framed works." loading="lazy" decoding="async" width="1344" height="488">
+      <figcaption class="mono">
+        <span>GALLERY STUDY / ROOM 02</span>
+        <span class="dim">SCULPTURE · PAINTING · WORKS ON PAPER</span>
+        <span class="dim">LIMITED VIEW</span>
+      </figcaption>
+    </figure>
+
+    <div class="exhibition__foot">
+      <figure class="exhibit exhibit--sm" data-reveal>
+        <img src="assets/figure-burgundy.jpg" alt="Close-up of a burgundy Companion figure with a raised hand marked with an X." loading="lazy" decoding="async" width="668" height="488">
+        <figcaption class="mono">DETAIL / HAND · ✕ MARK</figcaption>
+      </figure>
+      <div class="exhibition__note" data-reveal>
+        <p class="quote">“The figure covers its eyes, and the room fills with everything the face is not showing.”</p>
+        <p class="mono dim">CURATORIAL NOTE — ROOM 02, WALL TEXT</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ 07 · FORM ═════ -->
+<section class="section form" id="form">
+  <div class="form__grid-bg" aria-hidden="true"></div>
+  <div class="wrap">
+    <header class="head head--center">
+      <p class="index mono" data-reveal>07 <span>—</span> MODEL STUDY</p>
+      <h2 class="head__title head__title--cyan" data-split>
+        <span class="line">THE EVOLUTION</span>
+        <span class="line">OF FORM</span>
+      </h2>
+      <p class="head__lead" data-reveal>
+        The same silhouette read through two construction logics: a sealed cast
+        object, and a fully mechanical interpretation with every component exposed.
+      </p>
+    </header>
+
+    <div class="form__panels">
+      <article class="panel" data-reveal>
+        <div class="panel__img"><img src="assets/blueprint-classic.jpg" alt="Black Companion figure covering its eyes, presented on a technical blueprint background." loading="lazy" decoding="async" width="365" height="816"></div>
+        <div class="panel__body">
+          <p class="mono panel__id">SPEC — A / CLASSIC CAST</p>
+          <h3>CLASSIC<br>AESTHETIC</h3>
+          <p>Closed volume. No seams shown, no mechanism implied. The emotion lives entirely in the pose.</p>
+          <dl class="datapoints">
+            <div><dt class="mono">SURFACE</dt><dd class="mono"><span data-count="388" data-suffix=" CM²">0</span></dd></div>
+            <div><dt class="mono">GLOSS</dt><dd class="mono"><span data-count="12" data-suffix=" GU">0</span></dd></div>
+            <div><dt class="mono">PARTS</dt><dd class="mono"><span data-count="9">0</span></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <div class="form__axis" aria-hidden="true">
+        <span></span><p class="mono">A → B</p><span></span>
+      </div>
+
+      <article class="panel panel--cyan" data-reveal>
+        <div class="panel__img"><img src="assets/blueprint-mech.jpg" alt="Transparent mechanical Companion figure with visible gears, circuits and a glowing core." loading="lazy" decoding="async" width="410" height="922"></div>
+        <div class="panel__body">
+          <p class="mono panel__id">SPEC — B / MECHANICAL</p>
+          <h3>MECHANICAL<br>MARVEL</h3>
+          <p>Same outline, opposite honesty. The shell turns transparent and the object admits it was engineered.</p>
+          <dl class="datapoints">
+            <div><dt class="mono">COMPONENTS</dt><dd class="mono"><span data-count="276">0</span></dd></div>
+            <div><dt class="mono">CORE</dt><dd class="mono"><span data-count="192" data-suffix=" W">0</span></dd></div>
+            <div><dt class="mono">PARTS</dt><dd class="mono"><span data-count="41">0</span></dd></div>
+          </dl>
+        </div>
+      </article>
+    </div>
+
+    <p class="form__code mono"><span class="cyan">■</span> MODEL SEC: KA—889_DISSECT &nbsp;//&nbsp; TOKYO LAB R&amp;D &nbsp;//&nbsp; SHEET 02 OF 04</p>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ 08 · STREET ═════ -->
+<section class="street" id="street">
+  <div class="street__band" aria-hidden="true">
+    <img src="assets/wall-graffiti.jpg" alt="" loading="lazy" decoding="async" width="1740" height="279" id="streetBand">
+  </div>
+
+  <div class="wrap street__grid">
+    <div class="street__text">
+      <p class="index mono" data-reveal>08 <span>—</span> STREET CULTURE</p>
+      <h2 class="head__title" data-split>
+        <span class="line">FROM WALL</span>
+        <span class="line">TO OBJECT<i class="dot dot--pink">.</i></span>
+      </h2>
+      <p class="head__lead" data-reveal>
+        The language starts outdoors — spray, repetition, a mark restated until it
+        becomes a name. What the gallery later sets on a plinth was first painted
+        on a wall at night.
+      </p>
+      <div class="street__actions" data-reveal>
+        <a class="btn btn--pink" href="#drops">DISCOVER DROPS <i aria-hidden="true">→</i></a>
+        <a class="btn btn--ghost" href="#archive">EXPLORE THE SCENE <i aria-hidden="true">→</i></a>
+      </div>
+      <ul class="street__tags mono" data-reveal>
+        <li>PUBLIC LANGUAGE</li><li>PRIVATE COLLECTIBLE</li><li>URBAN ICONOGRAPHY</li>
+      </ul>
+    </div>
+
+    <figure class="street__plate" data-reveal data-cursor="SCENE">
+      <img src="assets/scene-bff.jpg" alt="Grey Companion figure holding a pink BFF figure in front of a large graffiti painting." loading="lazy" decoding="async" width="1526" height="858">
+      <figcaption class="mono">PLATE 08 / BFF — PINK <span class="dim">· MIXED MEDIA ON WALL</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════════════════ 09 · DROPS ═════ -->
+<section class="section drops" id="drops">
+  <div class="wrap">
+    <header class="head head--split">
+      <div>
+        <p class="index mono" data-reveal>09 <span>—</span> LIMITED DROPS</p>
+        <h2 class="head__title" data-split>
+          <span class="line">THE RELEASE</span>
+          <span class="line">SCHEDULE<i class="dot">.</i></span>
+        </h2>
+      </div>
+      <p class="head__lead" data-reveal>
+        Three pieces from the current archive window. Editions are fixed at
+        production; nothing is reprinted once the window closes.
+      </p>
+    </header>
+
+    <div class="cards">
+      <article class="card" data-reveal data-cursor="OPEN">
+        <div class="card__img">
+          <img src="assets/drop-monochrome.jpg" alt="Grey Companion vinyl figure photographed against a dark backdrop." loading="lazy" decoding="async" width="598" height="596">
+        </div>
+        <div class="card__head">
+          <span class="tag tag--acid">STRICTLY LIMITED</span>
+          <span class="card__price mono">$380.00</span>
+        </div>
+        <h3 class="card__title">COMPANION <span class="sep">//</span> MONOCHROME</h3>
+        <p class="card__desc">Greyscale 11-inch cast figure. Signature ✕ eyes, matte shell, weighted base.</p>
+        <p class="card__cta mono">ACQUIRE PIECE <i aria-hidden="true">→</i></p>
+      </article>
+
+      <article class="card card--feature" data-reveal data-cursor="OPEN">
+        <div class="card__img">
+          <img src="assets/drop-anatomy.jpg" alt="Half-dissected Companion figure displayed inside a clear acrylic vitrine." loading="lazy" decoding="async" width="598" height="596">
+        </div>
+        <div class="card__head">
+          <span class="tag tag--pink">DROP 01 · CURATED</span>
+          <span class="card__price mono">$420.00</span>
+        </div>
+        <h3 class="card__title">COMPANION <span class="sep">//</span> ANATOMY</h3>
+        <p class="card__desc">Half-section display object with hand-painted inner cast. Supplied in vitrine.</p>
+        <p class="card__cta mono">ACQUIRE PIECE <i aria-hidden="true">→</i></p>
+      </article>
+
+      <article class="card card--sold" data-reveal data-cursor="ARCHIVE">
+        <div class="card__img">
+          <img src="assets/drop-pink.jpg" alt="Inflated electric pink Companion-style figure on a white pedestal." loading="lazy" decoding="async" width="598" height="596">
+        </div>
+        <div class="card__head">
+          <span class="tag tag--muted">SOLD OUT · ARCHIVE ONLY</span>
+          <span class="card__price mono dim">$350.00</span>
+        </div>
+        <h3 class="card__title">CHUM <span class="sep">//</span> ELECTRIC PINK</h3>
+        <p class="card__desc">Inflated-form study in radiant neon. Released once, held now for reference.</p>
+        <p class="card__cta mono">VIEW IN ARCHIVE <i aria-hidden="true">→</i></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ 10 · APPAREL ═════ -->
+<section class="section apparel" id="apparel">
+  <div class="wrap apparel__grid">
+    <div class="apparel__text">
+      <p class="index mono" data-reveal>10 <span>—</span> APPAREL</p>
+      <h2 class="head__title" data-split>
+        <span class="line">WEAR</span>
+        <span class="line">THE ART<i class="dot">.</i></span>
+      </h2>
+      <p class="head__lead" data-reveal>
+        The archive leaves the vitrine. Heavy-weight fleece, screen-printed motifs
+        and cut-and-sew pieces carrying the same silhouette at body scale.
+      </p>
+      <ul class="apparel__list" data-reveal>
+        <li><span class="mono">01</span> HEAVY FLEECE HOODIE <span class="mono dim">400 GSM</span></li>
+        <li><span class="mono">02</span> RELAXED SWEATPANT <span class="mono dim">CO—OP CUT</span></li>
+        <li><span class="mono">03</span> TRAINER / DECK <span class="mono dim">CAPSULE</span></li>
+      </ul>
+      <a class="btn btn--solid" href="#access" data-reveal>SHOP THE CAPSULE <i aria-hidden="true">→</i></a>
+    </div>
+
+    <figure class="apparel__plate" data-reveal data-cursor="CAPSULE">
+      <img src="assets/apparel-hoodie.jpg" alt="Black hoodie with a printed Companion graphic, laid flat with matching sweatpants and trainers." loading="lazy" decoding="async" width="878" height="392">
+      <figcaption class="mono">CAPSULE 01 / STREETWEAR COLLAB <span class="dim">· FW—25</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ 11 · ARCHIVE ═════ -->
+<section class="section archive" id="archive">
+  <div class="wrap archive__head">
+    <div>
+      <p class="index mono" data-reveal>11 <span>—</span> THE ARCHIVE</p>
+      <h2 class="head__title" data-split><span class="line">INDEX OF VIEWS</span></h2>
+    </div>
+    <div class="archive__nav">
+      <button type="button" id="archPrev" aria-label="Previous archive item">←</button>
+      <button type="button" id="archNext" aria-label="Next archive item">→</button>
+    </div>
+  </div>
+
+  <div class="archive__rail" id="archRail" tabindex="0" role="group" aria-label="Archive gallery — scroll horizontally">
+    <figure class="rail__item"><img src="assets/sheet-mono.jpg" alt="Monochrome Companion rotation study." loading="lazy" decoding="async"><figcaption class="mono">01 / MONOCHROME</figcaption></figure>
+    <figure class="rail__item rail__item--cut"><img src="assets/cut-mono-dissect.png" alt="Dissected grey Companion figure." loading="lazy" decoding="async"><figcaption class="mono">02 / DISSECTED</figcaption></figure>
+    <figure class="rail__item"><img src="assets/gallery-room.jpg" alt="White gallery room installation view." loading="lazy" decoding="async"><figcaption class="mono">03 / GALLERY</figcaption></figure>
+    <figure class="rail__item"><img src="assets/scene-street.jpg" alt="Sculptures in front of a graffiti mural." loading="lazy" decoding="async"><figcaption class="mono">04 / STREET</figcaption></figure>
+    <figure class="rail__item"><img src="assets/sheet-black.jpg" alt="Black edition Companion rotation study." loading="lazy" decoding="async"><figcaption class="mono">05 / BLACK EDITION</figcaption></figure>
+    <figure class="rail__item"><img src="assets/apparel-hoodie.jpg" alt="Apparel capsule flat lay." loading="lazy" decoding="async"><figcaption class="mono">06 / APPAREL</figcaption></figure>
+    <figure class="rail__item"><img src="assets/blueprint-mech.jpg" alt="Mechanical Companion blueprint study." loading="lazy" decoding="async"><figcaption class="mono">07 / FORM</figcaption></figure>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ 12 · ACCESS ═════ -->
+<section class="access" id="access">
+  <div class="wrap"><div class="access__inner">
+    <p class="index mono" data-reveal>12 <span>—</span> ACCESS</p>
+    <h2 class="access__title" data-split>
+      <span class="line">THE NEXT WINDOW</span>
+      <span class="line">OPENS QUIETLY<i class="dot">.</i></span>
+    </h2>
+    <p class="access__lead" data-reveal>
+      Archive access is released to a list. No countdowns, no noise — one message
+      when the room opens.
+    </p>
+
+    <form class="access__form" id="accessForm" novalidate data-reveal>
+      <label class="sr-only" for="accessEmail">Email address</label>
+      <input id="accessEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="YOUR@EMAIL.COM" required>
+      <button type="submit" class="btn btn--solid">REQUEST ACCESS <i aria-hidden="true">→</i></button>
+    </form>
+    <p class="access__msg mono" id="accessMsg" role="status"></p>
+    <p class="access__fine mono dim">CONCEPTUAL PROJECT · NOTHING IS SENT, STORED OR TRANSMITTED.</p>
+  </div></div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════════ FOOTER ═══════ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <p class="footer__mark" aria-hidden="true">✕✕</p>
+        <p class="footer__name">ARCHIVE</p>
+        <p class="footer__desc">
+          A conceptual digital exhibition and portfolio study built around the visual
+          language of contemporary collectible sculpture and street culture.
+        </p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer — exhibition">
+        <p class="mono dim">EXHIBITION</p>
+        <a href="#figures">Figures</a><a href="#anatomy">Anatomy</a>
+        <a href="#film">The Film</a><a href="#exhibition">Gallery</a>
+      </nav>
+      <nav class="footer__nav" aria-label="Footer — objects">
+        <p class="mono dim">OBJECTS</p>
+        <a href="#form">Form Study</a><a href="#drops">Drops</a>
+        <a href="#apparel">Apparel</a><a href="#archive">Archive</a>
+      </nav>
+      <div class="footer__nav footer__nav--text">
+        <p class="mono dim">CREDITS</p>
+        <p>Motion study generated with <strong>Higgsfield</strong>.</p>
+        <p>Reference imagery used for study purposes only.</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="mono dim">© <span id="year">2025</span> ARCHIVE ✕✕ — CONCEPTUAL EXHIBITION</p>
+      <p class="mono dim footer__legal">
+        Independent, non-commercial concept piece inspired by the visual language of KAWS.
+        Not an official site, and not affiliated with or endorsed by the artist or any rights holder.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
